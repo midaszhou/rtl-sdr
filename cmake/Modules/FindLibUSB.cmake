@@ -2,10 +2,12 @@ if(NOT LIBUSB_FOUND)
   pkg_check_modules (LIBUSB_PKG libusb-1.0)
   find_path(LIBUSB_INCLUDE_DIR NAMES libusb.h
     PATHS
+    /home/midas/libusb/install/include/libusb-1.0
     ${LIBUSB_PKG_INCLUDE_DIRS}
     /usr/include/libusb-1.0
     /usr/include
     /usr/local/include
+    
   )
 
 #standard library name for libusb-1.0
@@ -19,6 +21,7 @@ endif()
   find_library(LIBUSB_LIBRARIES
     NAMES ${libusb1_library_names}
     PATHS
+    /home/midas/libusb/install/lib
     ${LIBUSB_PKG_LIBRARY_DIRS}
     /usr/lib
     /usr/local/lib
